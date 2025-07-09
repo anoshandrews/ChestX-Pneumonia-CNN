@@ -9,7 +9,7 @@ model = tf.keras.models.load_model("COVID-19 Xray Detection.h5")
 
 st.set_page_config(page_title="COVID-19 X-ray Detection")
 
-st.title("ChestX CCOVID-19 Detection")
+st.title("ChestX COVID-19 Detection")
 
 st.write("""
 Upload a chest X-ray image and the model will predict whether it shows signs of pneumonia (which could be COVID-19 or other types).
