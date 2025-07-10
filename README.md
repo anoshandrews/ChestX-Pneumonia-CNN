@@ -6,6 +6,12 @@ Pneumonia is a severe lung infection that inflames the air sacs in one or both l
 
 This project leverages the power of Convolutional Neural Networks (CNNs) to automate and enhance the detection of pneumonia from chest X-ray images. By training a deep learning model on a vast dataset of chest X-rays, this system aims to provide a highly accurate and efficient tool for assisting in the early diagnosis of pneumonia.
 
+## Live Demo
+
+Experience the ChestX-Pneumonia-CNN live application here:
+
+[ChestX-Pneumonia Live Demo](https://chestx-pneumonia.streamlit.app/)
+
 ## Motivation
 
 The high prevalence and severity of pneumonia underscore the critical need for accurate and timely detection. By integrating machine learning algorithms, particularly CNNs, into the diagnostic process, we can:
@@ -84,12 +90,6 @@ To run the Streamlit web application locally:
     ```
 
 3.  Open your web browser and go to the URL provided by Streamlit (usually `http://localhost:8501`). You can then upload a new X-ray image or select from provided examples to get a pneumonia prediction.
-
-## Live Demo
-
-Experience the ChestX-Pneumonia-CNN live application here:
-
-[ChestX-Pneumonia Live Demo](https://chestx-pneumonia.streamlit.app/)
 
 ## License
 
