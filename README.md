@@ -71,7 +71,6 @@ To set up and run the project locally, you have two options: using a virtual env
     ```bash
     pip install -r requirements.txt
     ```
-    *(Ensure you have a `requirements.txt` file in your repository listing all necessary libraries and their versions.)*
 
 4.  **Prepare the dataset:**
     Copy the `chest-xray` directory contents (containing `train`, `test`, and `val` subdirectories) into a `data` folder within the project root.
