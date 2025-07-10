@@ -47,7 +47,6 @@ The model is trained on a dataset of chest X-ray images categorized into "Normal
 * **Test Set:** ~234 Normal, ~390 Pneumonia images
 * **Validation Set:** ~8 Normal, ~8 Pneumonia images
 
-*(Note: These numbers are based on common datasets used for this problem, specific counts might vary based on your exact dataset split.)*
 
 ## Installation and Setup
 
@@ -96,8 +95,6 @@ Docker provides a consistent environment for running the application. Make sure 
     This command builds the Docker image named `chestx-pneumonia-cnn`. This process will install all dependencies and set up the environment as defined in the `Dockerfile`.
 
 ## Usage
-
-
 
 ### Running the Web Application via Docker Container
 
