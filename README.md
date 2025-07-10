@@ -59,39 +59,14 @@ To set up and run the project locally, you have two options: using a virtual env
     cd ChestX-Pneumonia-CNN
     ```
 
-### Option 1: Using a Virtual Environment (Recommended for Development)
-
-2.  **Create a virtual environment:**
-    ```bash
-    python -m venv venv
-    source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
-    ```
-
-3.  **Install dependencies:**
-    ```bash
-    pip install -r requirements.txt
-    ```
-
-4.  **Prepare the dataset:**
+2.  **Prepare the dataset:**
     Copy the `chest-xray` directory contents (containing `train`, `test`, and `val` subdirectories) into a `data` folder within the project root.
 
-5.  **Train the model (optional):**
+3.  **Train the model (optional):**
     If you wish to train the model from scratch, execute the relevant Python script (e.g., `model_training.py` or a Jupyter notebook) from the `source` directory.
 
-### Option 2: Using Docker (Recommended for Deployment/Containerization)
 
-Docker provides a consistent environment for running the application. Make sure you have Docker installed on your system.
-
-2.  **Build the Docker image:**
-    Navigate to the root of the cloned repository where the `Dockerfile` is located.
-    ```bash
-    docker build -t chestx-pneumonia-cnn .
-    ```
-    This command builds the Docker image named `chestx-pneumonia-cnn`. This process will install all dependencies and set up the environment as defined in the `Dockerfile`.
-
-## Usage
-
-### Running the Web Application Locally (Virtual Environment)
+### Option 1: Using a Virtual Environment (Recommended for Development if you dont have Docker installed)
 
 To run the Streamlit web application locally using your virtual environment:
 
@@ -109,6 +84,21 @@ To run the Streamlit web application locally using your virtual environment:
     ```
 4.  Open your web browser and go to the URL provided by Streamlit (usually `http://localhost:8501`). You can then upload a new X-ray image or select from provided examples to get a pneumonia prediction.
 
+### Option 2: Using Docker (Recommended for Deployment/Containerization)
+
+Docker provides a consistent environment for running the application. Make sure you have Docker installed on your system.
+
+2.  **Build the Docker image:**
+    Navigate to the root of the cloned repository where the `Dockerfile` is located.
+    ```bash
+    docker build -t chestx-pneumonia-cnn .
+    ```
+    This command builds the Docker image named `chestx-pneumonia-cnn`. This process will install all dependencies and set up the environment as defined in the `Dockerfile`.
+
+## Usage
+
+
+
 ### Running the Web Application via Docker Container
 
 To run the Streamlit web application using the Docker container:
@@ -124,6 +114,3 @@ To run the Streamlit web application using the Docker container:
     ```
 3.  Open your web browser and go to `http://localhost:8501`. The Streamlit application will be accessible, allowing you to interact with the pneumonia detection model.
 
-## License
-
-This project is licensed under the Apache-2.0 License. See the `LICENSE` file for more details.
