@@ -62,7 +62,7 @@ To set up and run the project locally, you have two options: using a virtual env
     Copy the `chest-xray` directory contents (containing `train`, `test`, and `val` subdirectories) into a `data` folder within the project root.
 
 3.  **Train the model (optional):**
-    If you wish to train the model from scratch, execute the relevant Python script (e.g., `model_training.py` or a Jupyter notebook) from the `source` directory.
+    If you wish to train the model from scratch, execute the relevant Python script (e.g., `model_training.py` or a Jupyter notebook) from  https://github.com/anoshandrews/AI_ML_Developer_Test_Anosh/tree/main/task_2_image_detection
 
 
 ### Option 1: Using a Virtual Environment (Recommended for Development if you dont have Docker installed)
