@@ -73,9 +73,10 @@ To run the Streamlit web application locally using your virtual environment:
     ```bash
     source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
     ```
-2.  Navigate to the `webapp` directory:
+2.  Navigate to the 'ChestX-Pneumonia-CNN' directory:
     ```bash
-    cd webapp
+    cd ChestX-Pneumonia-CNN
+
     ```
 3.  Run the Streamlit application:
     ```bash
