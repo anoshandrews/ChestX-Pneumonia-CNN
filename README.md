@@ -6,6 +6,8 @@ Pneumonia is a severe lung infection that inflames the air sacs in one or both l
 
 This project leverages the power of Convolutional Neural Networks (CNNs) to automate and enhance the detection of pneumonia from chest X-ray images. By training a deep learning model on a vast dataset of chest X-rays, this system aims to provide a highly accurate and efficient tool for assisting in the early diagnosis of pneumonia.
 
+NB: This is not deployed as a Docker container, as Streamlit Cloud does not support Docker containers; here it is deployed in Streamlit Cloud without Docker. However, instructions to run the Docker container and the Dockerfile have been provided in the repository.
+
 ## Live Demo
 
 Experience the ChestX-Pneumonia-CNN live application here:
@@ -49,7 +51,7 @@ The model is trained on a dataset of chest X-ray images categorized into "Normal
 
 ## Installation and Setup
 
-To set up and run the project locally, follow these steps:
+To set up and run the project locally, you have two options: using a virtual environment or Docker.
 
 1.  **Clone the repository:**
     ```bash
@@ -57,7 +59,9 @@ To set up and run the project locally, follow these steps:
     cd ChestX-Pneumonia-CNN
     ```
 
-2.  **Create a virtual environment (recommended):**
+### Option 1: Using a Virtual Environment (Recommended for Development)
+
+2.  **Create a virtual environment:**
     ```bash
     python -m venv venv
     source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
@@ -75,24 +79,52 @@ To set up and run the project locally, follow these steps:
 5.  **Train the model (optional):**
     If you wish to train the model from scratch, execute the relevant Python script (e.g., `model_training.py` or a Jupyter notebook) from the `source` directory.
 
-## Usage (Web Application)
+### Option 2: Using Docker (Recommended for Deployment/Containerization)
 
-To run the Streamlit web application locally:
+Docker provides a consistent environment for running the application. Make sure you have Docker installed on your system.
 
-1.  Navigate to the `webapp` directory:
+2.  **Build the Docker image:**
+    Navigate to the root of the cloned repository where the `Dockerfile` is located.
+    ```bash
+    docker build -t chestx-pneumonia-cnn .
+    ```
+    This command builds the Docker image named `chestx-pneumonia-cnn`. This process will install all dependencies and set up the environment as defined in the `Dockerfile`.
+
+## Usage
+
+### Running the Web Application Locally (Virtual Environment)
+
+To run the Streamlit web application locally using your virtual environment:
+
+1.  Activate your virtual environment (if not already active):
+    ```bash
+    source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
+    ```
+2.  Navigate to the `webapp` directory:
     ```bash
     cd webapp
     ```
-
-2.  Run the Streamlit application:
+3.  Run the Streamlit application:
     ```bash
     streamlit run web_app.py
     ```
+4.  Open your web browser and go to the URL provided by Streamlit (usually `http://localhost:8501`). You can then upload a new X-ray image or select from provided examples to get a pneumonia prediction.
 
-3.  Open your web browser and go to the URL provided by Streamlit (usually `http://localhost:8501`). You can then upload a new X-ray image or select from provided examples to get a pneumonia prediction.
+### Running the Web Application via Docker Container
+
+To run the Streamlit web application using the Docker container:
+
+1.  Ensure you have built the Docker image as described in the "Installation and Setup" -> "Using Docker" section.
+2.  Run the Docker container, mapping port 8501 from the container to your host:
+    ```bash
+    docker run -p 8501:8501 chestx-pneumonia-cnn
+    ```
+    If your `Dockerfile` changes the working directory to `webapp` and then runs `streamlit run web_app.py`, this command should suffice. If your `Dockerfile` just copies files and you need to specify the command at runtime, you might need:
+    ```bash
+    docker run -p 8501:8501 chestx-pneumonia-cnn streamlit run webapp/web_app.py
+    ```
+3.  Open your web browser and go to `http://localhost:8501`. The Streamlit application will be accessible, allowing you to interact with the pneumonia detection model.
 
 ## License
 
 This project is licensed under the Apache-2.0 License. See the `LICENSE` file for more details.
-
----
